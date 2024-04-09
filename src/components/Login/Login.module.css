@@ -1,0 +1,102 @@
+.container{
+    width: 100%;
+    height: 633px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8F9;
+}
+.innerContainer{
+    width: 90%;
+    height: 90%;
+    font-family: Rubik;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body{
+    width: 335px;
+    height: auto;
+}
+.signinText{
+    width: 188px;
+    height: auto;
+    font-size: large;
+    font-weight: 500;
+}
+.lorem{
+    width: 300px;
+    height: auto;
+    line-height: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.loremText{
+    font-size: 18px;
+    color: #1D2226;
+    opacity: 0.6;
+}
+.emailInputContainer{
+    width: 100%;
+    height: 40px;
+}
+.emailLable{
+    font-family: Rubik;
+    color: #6C25FF;
+    width: 103px;
+    height: 15px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+    background-color: #F7F8F9;
+    padding-left: 5px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+.emailInput{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #CBCBCB;
+    border-radius: 6px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    font-family: Rubik;
+    background-color: #F7F8F9;
+}
+.passwordInputContainer{
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+}
+.loginButton{
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 6px;
+    background-color: #CBCBCB;
+    font-family: Rubik;
+    cursor: pointer;
+    transition: color 2s,background-color 2s;
+    margin-top: 5px;
+    font-weight: bold;
+    color: white;
+    margin-top: 30px;
+}
+.loginButton:hover{
+    background-color: black;
+}
+
+@media screen and (max-width:350px) {
+    .body{
+        width: 270px;
+    }
+    .signinText{
+        font-size: medium;
+    }
+    .lorem{
+        width: 231px;
+    }
+    .loremText{
+        font-size: 16px;
+    }
+}

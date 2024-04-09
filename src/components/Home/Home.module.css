@@ -1,0 +1,88 @@
+.container{
+    width: 100%;
+    height: 633px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8F9;
+}
+.innerContainer{
+    width: 90%;
+    height: 90%;
+    font-family: Rubik;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+.body{
+    width: 335px;
+    height: auto;
+}
+.welcomeText{
+    width: 231px;
+    height: 33px;
+    font-size: large;
+    font-weight: 500;
+}
+.lorem{
+    width: 300px;
+    height: auto;
+    line-height: 22px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.loremText{
+    font-size: 18px;
+    color: #1D2226;
+    opacity: 0.6;
+}
+.signupButton{
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 6px;
+    background-color: #6C25FF;
+    color: white;
+    font-family: Rubik;
+    cursor: pointer;
+    transition: color 2s,background-color 2s, border 2s;
+    font-weight: bold;
+}
+.signupButton:hover{
+    background-color: white;
+    color: #6C25FF;
+    border: 1px solid #6C25FF;
+}
+.loginButton{
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 6px;
+    background-color: #6C25FF4B;
+    font-family: Rubik;
+    cursor: pointer;
+    transition: color 2s,background-color 2s;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.loginButton:hover{
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width:350px) {
+    .body{
+        width: 270px;
+        height: auto;
+    }
+    .welcomeText{
+        font-size: medium;
+    }
+    .lorem{
+        width: 231px;
+    }
+    .loremText{
+        font-size: 16px;
+    }
+}
