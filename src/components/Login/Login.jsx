@@ -8,7 +8,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [emailErrorMsg, setEmailErrorMsg] = useState("");
   const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
-  const [success, setSuccess] = useState("");
 
   const navigate = useNavigate();
 
@@ -33,15 +32,12 @@ const Login = () => {
     }
     if (userEmail !== email && userPassword !== password) {
       alert("Please sign up to your account");
-      navigate("/signup")
+      navigate("/signup");
       return;
     }
     setTimeout(() => {
-      setSuccess("Login success");
-      setTimeout(() => {
-        setSuccess("");
-        navigate("/settings");
-      }, 2000);
+      alert("Login Success");
+      navigate("/settings");
     }, 2000);
   };
 
@@ -84,6 +80,7 @@ const Login = () => {
               className={styles.emailInput}
               placeholder="Enter password"
               onChange={(e) => setUserPassword(e.target.value)}
+              type="password"
             />
             <br></br>
             {passwordErrorMsg && (
@@ -93,11 +90,6 @@ const Login = () => {
             )}
           </div>
           <br></br>
-          {success && (
-              <span style={{ fontSize: "14px", color: "green" }}>
-                {success}
-              </span>
-            )}
           <button className={styles.loginButton} onClick={handleLogin}>
             Login
           </button>

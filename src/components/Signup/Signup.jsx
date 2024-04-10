@@ -14,7 +14,6 @@ const Signup = () => {
   const [emailErrorMsg, setEmailErrorMsg] = useState("");
   const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
   const [agencyErrorMsg, setAgencyErrorMsg] = useState("");
-  const [success, setSuccess] = useState("");
 
   const navigate = useNavigate();
 
@@ -60,17 +59,14 @@ const Signup = () => {
       return;
     }
     setTimeout(() => {
-      setSuccess("Signup success");
       localStorage.setItem("name", name);
       localStorage.setItem("phone", phone);
       localStorage.setItem("email", email);
       localStorage.setItem("password", password);
       localStorage.setItem("cName", cName);
       localStorage.setItem("agency", agency);
-      setTimeout(() => {
-        setSuccess("");
-        navigate("/login");
-      }, 2000);
+      alert("Signup Successful");
+      navigate("/login");
     }, 2000);
   };
 
@@ -85,13 +81,16 @@ const Signup = () => {
           </div>
 
           <div className={styles.inputContainer}>
-            <div className={styles.lable}>
-              Full Name<span style={{ color: "red" }}>*</span>
-            </div>
+            {name && (
+              <div className={styles.lable}>
+                Full Name<span style={{ color: "red" }}>*</span>
+              </div>
+            )}
             <input
               className={styles.input}
               placeholder="Enter full name"
               onChange={(e) => setName(e.target.value)}
+              type="text"
             />
             <br></br>
             {nameErrorMsg && (
@@ -102,13 +101,16 @@ const Signup = () => {
           </div>
 
           <div className={styles.inputContainer2}>
-            <div className={styles.lable}>
-              Phone number<span style={{ color: "red" }}>*</span>
-            </div>
+            {phone && (
+              <div className={styles.lable}>
+                Phone number<span style={{ color: "red" }}>*</span>
+              </div>
+            )}
             <input
               className={styles.input}
               placeholder="Enter phone number"
               onChange={(e) => setPhone(e.target.value)}
+              type="number"
             />
             <br></br>
             {phoneErrorMsg && (
@@ -119,13 +121,16 @@ const Signup = () => {
           </div>
 
           <div className={styles.inputContainer2}>
-            <div className={styles.lable}>
-              Email address<span style={{ color: "red" }}>*</span>
-            </div>
+            {email && (
+              <div className={styles.lable}>
+                Email address<span style={{ color: "red" }}>*</span>
+              </div>
+            )}
             <input
               className={styles.input}
               placeholder="Enter email address"
               onChange={(e) => setEmail(e.target.value)}
+              type="email"
             />
             <br></br>
             {emailErrorMsg && (
@@ -136,13 +141,16 @@ const Signup = () => {
           </div>
 
           <div className={styles.inputContainer2}>
-            <div className={styles.lable}>
-              Password<span style={{ color: "red" }}>*</span>
-            </div>
+            {password && (
+              <div className={styles.lable}>
+                Password<span style={{ color: "red" }}>*</span>
+              </div>
+            )}
             <input
               className={styles.input}
               placeholder="Enter password"
               onChange={(e) => setPassword(e.target.value)}
+              type="password"
             />
             <br></br>
             {passwordErrorMsg && (
@@ -153,7 +161,7 @@ const Signup = () => {
           </div>
 
           <div className={styles.inputContainer2}>
-            <div className={styles.lable}>Company name</div>
+            {cName && <div className={styles.lable}>Company name</div>}
             <input
               className={styles.input}
               placeholder="Enter company name"
@@ -192,11 +200,6 @@ const Signup = () => {
             {agencyErrorMsg && (
               <div style={{ fontSize: "14px", color: "red", width: "150%" }}>
                 {agencyErrorMsg}
-              </div>
-            )}
-            {success && (
-              <div style={{ fontSize: "14px", color: "green", width: "150%" }}>
-                {success}
               </div>
             )}
           </div>
